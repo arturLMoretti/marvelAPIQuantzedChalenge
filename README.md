@@ -14,11 +14,21 @@ Desafio enviado pelo Lucas Costa por e-mail:
 > Após recebimento dos projetos, estes entrarão em avaliação, sendo os melhores selecionados para a entrevista técnica, que deverá ocorrer na primeira quinzena de janeiro.
 > Caso tenha alguma dúvida, sinta-se à vontade para entrar em contato comigo.
 > Obrigado por participar de nossa seleção e boa sorte!
+
 ---
 
-## Ferramentas 
+## Ferramentas
 
 1. Windows 11 com WSL2
 2. VSCode em modo WSL: Ubuntu
-3. React/JavaScript 
+3. React/JavaScript
 4. Versionamento de arquivos com Git/GitHub
+5. ESLint Airbnb
+6. [Axios](https://github.com/axios/axios)
+7. [MD5](https://github.com/pvorb/node-md5)
+8. [React Router DOM](https://v5.reactrouter.com/web/guides/quick-start)
+9. [React Bootstrap](https://react-bootstrap.github.io/)
+
+## Agradecimentos
+
+- [Luiz Silva](https://www.youtube.com/watch?v=jlqgqSFIKPU)

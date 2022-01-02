@@ -1,13 +1,23 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Characters from './pages/Characters';
+import Home from './pages/Home';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header>Cabeçalho</header>
-      <main>Conteúdo Principal</main>
-      <footer>rodapé</footer>
-    </div>
+    <Router>
+      <Routes>
+        <Route
+          exact
+          path="/characters"
+          element={<Characters />}
+        />
+        <Route
+          exact
+          path="/"
+          element={<Home />}
+        />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;
