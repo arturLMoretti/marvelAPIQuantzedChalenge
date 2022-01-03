@@ -31,9 +31,7 @@ function Home() {
             para mostrar suas habilidades.
           </p>
 
-          <p>Com base nessa solicitação, </p>
-
-          <p className="email-paragraph">
+          <p className="email-paragraph last-email-paragraph">
             O prazo para conclusão do projeto é o dia 03/01/2022, sendo necessário o envio do
             resultado para este email: lucas.costa@quantzed.com.br - no formato de link do
             repositório do &gt; &gt; github.
@@ -42,6 +40,26 @@ function Home() {
             que deverá ocorrer na primeira quinzena de janeiro
           </p>
 
+          <p>Com base nessa solicitação, esta página foi criada!</p>
+          <p>Nela são renderizadas os seguintes endpoints:</p>
+
+          <ul>
+            <li>
+              GET - /v1/public/characters
+            </li>
+            <li>
+              GET - /v1/public/comics
+            </li>
+            <li>
+              GET - /v1/public/creators
+            </li>
+            <li>
+              GET - /v1/public/events
+            </li>
+            <li>
+              GET - /v1/public/series
+            </li>
+          </ul>
           <p>
             {' '}
           </p>
@@ -51,7 +69,7 @@ function Home() {
           <ul>
             <li>Windows 11 com WSL2</li>
             <li>VSCode em modo WS: Ubuntu</li>
-            <li>React/JavaScript</li>
+            <li>React/JavaScript/React Hooks</li>
             <li>Versionamento de arquivos com Git/GitHub</li>
             <li>ESLint Airbnb</li>
             <li>Axios</li>
@@ -69,7 +87,13 @@ function Home() {
 
           <p>
             <a href="https://www.youtube.com/watch?v=jlqgqSFIKPU" target="_blank" rel="noreferrer">Luiz Silva</a>
-            , pelo vídeo que me ensionou a usar a API
+            , por ter postado o vídeo que me ensionou a usar a API
+
+          </p>
+
+          <p>
+            <a href="https://www.betrybe.com/" target="_blank" rel="noreferrer">Trybe</a>
+            , que me ensino Desenvolvimento FrontEnd
 
           </p>
         </article>
