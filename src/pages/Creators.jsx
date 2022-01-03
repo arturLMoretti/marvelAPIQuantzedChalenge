@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 import Header from '../components/Header';
 import { apiRequest } from '../services/apiRequest';
 
@@ -13,14 +13,20 @@ function Characters() {
     <>
       <Header />
       <main>
-        <Container>
-          {creators.map((creator) => (
-            <Card key={creator.id} style={{ width: '20rem' }}>
-              <Card.Header>{creator.fullName}</Card.Header>
-              {creator.urls.map((url) => <Card.Link target="_blank" href={url.url}>{url.type}</Card.Link>)}
-            </Card>
-          ))}
-        </Container>
+        <Row
+          xs={1}
+          md={2}
+          className="g-4 h-100"
+          style={{ margin: 'auto 0' }}
+        >
+          {creators.length > 0 ? (
+            creators.map((creator) => (
+              <Card key={creator.id} style={{ width: '20rem' }}>
+                <Card.Header><a href={creator.urls[0].url}>{creator.fullName}</a></Card.Header>
+              </Card>
+            ))
+          ) : <h1>Carregando...</h1>}
+        </Row>
       </main>
       <footer>Rodapé</footer>
     </>
