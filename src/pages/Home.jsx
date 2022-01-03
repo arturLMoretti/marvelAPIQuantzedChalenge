@@ -1,8 +1,15 @@
 import React from 'react';
+import Header from '../components/Header';
 
 function Home() {
   return (
-    <h1>Home</h1>
+    <>
+      <Header />
+      <main>
+        Meus favoritos:
+      </main>
+      <footer>Artur Lemes Moretti LinkedIn GitHub</footer>
+    </>
   );
 }
 
