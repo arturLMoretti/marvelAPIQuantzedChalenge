@@ -14,28 +14,30 @@ function Series() {
       <Header />
       <main>
         <Container>
-          {series.map((event) => (
-            <Card
-              key={event.id}
-              style={{ width: '20rem' }}
-            >
-              <Card.Img
-                variant="top"
-                src={`${event.thumbnail.path}/standard_medium.${event.thumbnail.extension}`}
-              />
-              <Card.Body>
-                <Card.Title>{event.title}</Card.Title>
-                {event.urls.map((url) => (
-                  <Card.Link
-                    target="_blank"
-                    href={url.url}
-                  >
-                    {url.type}
-                  </Card.Link>
-                ))}
-              </Card.Body>
-            </Card>
-          ))}
+          {series.length > 0 ? (
+            series.map((event) => (
+              <Card
+                key={event.id}
+                style={{ width: '20rem' }}
+              >
+                <Card.Img
+                  variant="top"
+                  src={`${event.thumbnail.path}/standard_fantastic.${event.thumbnail.extension}`}
+                />
+                <Card.Body>
+                  <Card.Title>{event.title}</Card.Title>
+                  {event.urls.map((url) => (
+                    <Card.Link
+                      target="_blank"
+                      href={url.url}
+                    >
+                      {url.type}
+                    </Card.Link>
+                  ))}
+                </Card.Body>
+              </Card>
+            ))
+          ) : <h1>Carregando...</h1>}
         </Container>
       </main>
       <footer>Rodapé</footer>
