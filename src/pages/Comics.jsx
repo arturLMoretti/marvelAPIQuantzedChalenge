@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
-import { Container } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
 import { apiRequest } from '../services/apiRequest';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function Characters() {
   const [comics, setComics] = useState([]);
@@ -13,25 +14,45 @@ function Characters() {
     <>
       <Header />
       <main>
+        <h1>Quadrinhos</h1>
         {comics.length > 0 ? (
-          <Container>
+          <Row
+            xs={1}
+            md={2}
+            className="g-4 h-100"
+            style={{ margin: 'auto 0' }}
+          >
             {comics.map((comic) => (
-              <Card key={comic.id} style={{ width: '20rem' }}>
+              <Card
+                className="border-dark"
+                key={comic.id}
+                style={{
+                  maxWidth: '250px',
+                  margin: '10px',
+                }}
+              >
                 <Card.Img variant="top" src={`${comic.thumbnail.path}/portrait_uncanny.${comic.thumbnail.extension}`} />
                 <Card.Body>
-                  <Card.Title>{comic.title}</Card.Title>
+                  <Card.Title>
+                    <a
+                      href={comic.urls[0].url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {comic.title}
+                    </a>
+                  </Card.Title>
                   <Card.Text>
-                    {!comic.description ? 'Descrição indisponível!' : comic.description}
+                    {(!comic.description || (comic.description === '#N/A')) ? 'Descrição indisponível!' : comic.description}
                   </Card.Text>
-                  {comic.urls.map((url) => <Card.Link target="_blank" href={url.url}>{url.type}</Card.Link>)}
                 </Card.Body>
               </Card>
             ))}
-          </Container>
+          </Row>
         )
           : <h1>Carregando...</h1>}
       </main>
-      <footer>Rodapé</footer>
+      <Footer />
     </>
   );
 }
