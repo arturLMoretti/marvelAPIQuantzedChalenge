@@ -8,4 +8,4 @@ const timeStamp = Number(new Date());
 
 const hash = md5(timeStamp + privateKey + publicKey);
 
-export const apiRequest = (requisitonType) => axios.get(`http://gateway.marvel.com/v1/public/${requisitonType}?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`);
+export const apiRequest = (requisitonType) => axios.get(`https://gateway.marvel.com/v1/public/${requisitonType}?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`);
