@@ -29,6 +29,10 @@ Desafio enviado pelo Lucas Costa por e-mail:
 8. [React Router DOM](https://v5.reactrouter.com/web/guides/quick-start)
 9. [React Bootstrap](https://react-bootstrap.github.io/)
 
+## Beta 
+
+[Página em construção](https://arturlmoretti.github.io/marvelAPIQuantzedChalenge/)
+
 ## Agradecimentos
 
 - [Luiz Silva](https://www.youtube.com/watch?v=jlqgqSFIKPU)
