@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+#root > main {
+  margin: 0 5%;
+}
+
+.email-paragraph {
+  font-style: italic;
+  text-align: justify;
+  margin: 0 auto;
+  padding-left: 5%;
+  padding-right: 35%;
+}
