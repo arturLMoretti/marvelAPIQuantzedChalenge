@@ -93,7 +93,7 @@ function Home() {
 
           <p>
             <a href="https://www.betrybe.com/" target="_blank" rel="noreferrer">Trybe</a>
-            , que me ensino Desenvolvimento FrontEnd
+            , que me ensinou Desenvolvimento FrontEnd
 
           </p>
         </article>

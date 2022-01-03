@@ -12,27 +12,27 @@ export default function App() {
     <Routes>
       <Route
         exact
-        path="/"
+        path="./"
         element={<Home />}
       />
       <Route
-        path="/characters"
+        path="./characters"
         element={<Characters />}
       />
       <Route
-        path="/comics"
+        path="./comics"
         element={<Comics />}
       />
       <Route
-        path="/creators"
+        path="./creators"
         element={<Creators />}
       />
       <Route
-        path="/events"
+        path="./events"
         element={<Events />}
       />
       <Route
-        path="/series"
+        path="./series"
         element={<Series />}
       />
     </Routes>
