@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { apiRequest } from '../services/apiRequest';
 
@@ -13,37 +14,63 @@ function Events() {
     <>
       <Header />
       <main>
-        <Container>
+        <h1>Eventos</h1>
+        <Row
+          xs={1}
+          md={2}
+          className="g-4 h-100"
+          style={{ margin: 'auto 0' }}
+        >
           {events.length > 0 ? (
             events.map((event) => (
               <Card
                 key={event.id}
-                style={{ width: '20rem' }}
+                style={{
+                  maxWidth: '250px',
+                  margin: '10px',
+                }}
+                className="border-dark d-flex align-items-stretch justify-content-between"
               >
                 <Card.Img
                   variant="top"
                   src={`${event.thumbnail.path}/standard_fantastic.${event.thumbnail.extension}`}
                 />
-                <Card.Body>
-                  <Card.Title>{event.title}</Card.Title>
+                <Card.Body
+                  className="d-flex flex-column align-items-stretch justify-content-between"
+                >
+                  <Card.Title>
+                    <a
+                      href={event.urls[0].url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {event.title}
+                    </a>
+                  </Card.Title>
                   <Card.Text>
                     {event.description.length === 0 ? 'Descrição indisponível!' : event.description}
                   </Card.Text>
-                  {event.urls.map((url) => (
-                    <Card.Link
-                      target="_blank"
-                      href={url.url}
-                    >
-                      {url.type}
-                    </Card.Link>
-                  ))}
+                  <Card.Footer
+                    className="border-dark"
+                  >
+                    {event.urls.map((url, idx) => (
+                      idx > 0 && (
+                        <Card.Link
+                          target="_blank"
+                          href={url.url}
+                        >
+                          {url.type}
+                        </Card.Link>
+                      )
+                    ))}
+                  </Card.Footer>
                 </Card.Body>
               </Card>
             ))
           ) : <h1>Carregando...</h1>}
-        </Container>
+        </Row>
       </main>
-      <footer>Rodapé</footer>
+      <Footer />
     </>
   );
 }

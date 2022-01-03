@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { apiRequest } from '../services/apiRequest';
 
@@ -13,34 +14,42 @@ function Series() {
     <>
       <Header />
       <main>
-        <Container>
+        <h1>Séries</h1>
+        <Row
+          xs={1}
+          md={2}
+          className="g-4 h-100"
+          style={{ margin: 'auto 0' }}
+        >
           {series.length > 0 ? (
             series.map((event) => (
               <Card
+                className="border-dark"
                 key={event.id}
-                style={{ width: '20rem' }}
+                style={{
+                  maxWidth: '250px',
+                  margin: '10px',
+                }}
               >
                 <Card.Img
                   variant="top"
                   src={`${event.thumbnail.path}/standard_fantastic.${event.thumbnail.extension}`}
                 />
                 <Card.Body>
-                  <Card.Title>{event.title}</Card.Title>
-                  {event.urls.map((url) => (
-                    <Card.Link
-                      target="_blank"
-                      href={url.url}
+                  <Card.Title>
+                    <a
+                      href={event.urls[0].url}
                     >
-                      {url.type}
-                    </Card.Link>
-                  ))}
+                      {event.title}
+                    </a>
+                  </Card.Title>
                 </Card.Body>
               </Card>
             ))
           ) : <h1>Carregando...</h1>}
-        </Container>
+        </Row>
       </main>
-      <footer>Rodapé</footer>
+      <Footer />
     </>
   );
 }
